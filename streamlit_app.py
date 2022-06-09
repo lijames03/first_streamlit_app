@@ -19,9 +19,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')# Let 's put a pick list here so
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(
     my_fruit_list.index), ['Avocado', 'Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]# Display the table on the page
-streamlit.dataframe(fruits_to_show)# Created the repeatable code block(
-    called a
-    function)
+streamlit.dataframe(fruits_to_show)# Created the repeatable code block(called a function)
 def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = requests.get(
         "https://fruityvice.com/api/fruit/" + this_fruit_choice)
